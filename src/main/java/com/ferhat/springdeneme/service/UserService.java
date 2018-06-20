@@ -12,12 +12,9 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private UserRepository userRepository;
-
     @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
+    
 
     public User findFirstByUserId(Long id) {
         return userRepository.findFirstByUserId(id);
@@ -93,6 +90,39 @@ public class UserService {
                 System.out.println("User Email : " + userList.get(i).getUserEmail());
                 System.out.println("********************************************");
 
+            }
+        }
+    }
+
+    public void getUserName(String name) {
+        List<User> users = userRepository.findOneByUserFirstNameIgnoreCase(name);
+        if (users.size() == 0) {
+            System.out.println("Db'ye kayıtlı kişi yok.. ");
+        } else {
+            for (User s : users) {
+                System.out.println("User Id --> " + s.getUserId());
+                System.out.println("User Name --> " + s.getUserFirstName());
+                System.out.println("User Surname --> " + s.getUserLastName());
+                System.out.println("User Email --> " + s.getUserEmail());
+                System.out.println("User Department Name --> " + s.getUserDepartment());
+                System.out.println("********************************************");
+                System.out.println();
+            }
+        }
+    }
+
+    public void deleteAllUsers() {
+        userRepository.deleteAll();
+    }
+
+    public void addUsers(List<User> users) {
+        User user;
+        for (int i = 0; i < users.size(); i++) {
+            user = userRepository.findFirstByUserId(users.get(i).getUserId());
+            if (user == null) {
+                userRepository.save(users.get(i));
+            }else{
+                System.out.println("Kişi zaten Db'ye kayıtlı.. ");
             }
         }
     }

@@ -6,15 +6,13 @@ import com.ferhat.springdeneme.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
-    private UserService userService;
-
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
 
 
     @PostMapping("/adduser")
@@ -42,4 +40,18 @@ public class UserController {
         userService.getAllUser();
     }
 
+    @PostMapping("/addusers")
+    public void addUsers(@RequestBody List<User> users) {
+        userService.addUsers(users);
+    }
+
+    @DeleteMapping("/usersdelete")
+    public void usersDelete() {
+        userService.deleteAllUsers();
+    }
+
+    @GetMapping("/getusername")
+    public void getUserName(@RequestParam(value = "name") String name) {
+        userService.getUserName(name);
+    }
 }

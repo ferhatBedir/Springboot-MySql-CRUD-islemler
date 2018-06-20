@@ -4,8 +4,6 @@ import com.ferhat.springdeneme.entity.User;
 import com.ferhat.springdeneme.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.List;
 

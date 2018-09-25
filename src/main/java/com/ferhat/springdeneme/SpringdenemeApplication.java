@@ -4,11 +4,16 @@ package com.ferhat.springdeneme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Date;
+
 @SpringBootApplication
 public class SpringdenemeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringdenemeApplication.class, args);
+
+        Date date = new Date();
+        System.out.println(date);
 
         /*
         --- Kendi Pc'mdeki mySql bilgileri

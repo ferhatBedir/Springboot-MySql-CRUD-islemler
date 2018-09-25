@@ -1,13 +1,16 @@
 package com.ferhat.springdeneme.controller;
 
 
-import com.ferhat.springdeneme.entity.User;
 import com.ferhat.springdeneme.service.UserService;
+import com.ferhat.springdeneme.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 import java.util.List;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -16,6 +19,8 @@ public class UserController {
 
     @PostMapping("/adduser")
     public void addUser(@RequestBody User user) {
+        Date date = new Date();
+        user.setBirthDate(date);
         userService.addUser(user);
     }
 
@@ -47,6 +52,11 @@ public class UserController {
     @DeleteMapping("/usersdelete")
     public void usersDelete() {
         userService.deleteAllUsers();
+    }
+
+    @DeleteMapping("/usedeletebyuserid")
+    public void deleteByUserId(@RequestParam(value = "id") Long userId) {
+        userService.deleteUserByUserId(userId);
     }
 
     @GetMapping("/getusername")

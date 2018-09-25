@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 public class User {
@@ -24,6 +25,8 @@ public class User {
     @Size(min = 3, max = 40)
     private String userLastName;
 
+    private Date birthDate;
+
     @Size(min = 3, max = 40)
     private String userEmail;
 
@@ -31,15 +34,19 @@ public class User {
     private String userDepartment;
 
 
-    public User() {
-    }
-
-    public User(Long userId, String userFirstName, String userLastName, String userEmail, String userDepartment) {
+    public User(@NotNull Long userId, @Size(min = 3, max = 40) String userFirstName,
+                @Size(min = 3, max = 40) String userLastName, Date birthDate, @Size(min = 3, max = 40) String userEmail,
+                @Size(min = 2, max = 40) String userDepartment) {
         this.userId = userId;
         this.userFirstName = userFirstName;
         this.userLastName = userLastName;
+        this.birthDate = birthDate;
         this.userEmail = userEmail;
         this.userDepartment = userDepartment;
+    }
+
+    public Long getId() {
+        return Id;
     }
 
     public Long getUserId() {
@@ -64,6 +71,14 @@ public class User {
 
     public void setUserLastName(String userLastName) {
         this.userLastName = userLastName;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getUserEmail() {

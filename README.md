@@ -19,16 +19,50 @@
        spring.jpa.hibernate.ddl-auto=update
        server.port=8080
        
-<h2>Send Request</h2>
+<h2>Send Post Request</h2>
 
 * When register user, you send database name.
 
 * For Example : Request Body
 
       * {
-           "userName" :"firstNameUser",
-           "userLastName" : "LastNameUser",
-           "databaseName" : "dbname"
+           "userFirstName" :"firstNameUser",
+           "UserLastName" : "LastNameUser",
+           "birthDate" : "date"
+           "userEmail" : "mailaddress",
+           "userDepartment" : "userdepartment"
        }
        
- * Address : http://localhost:8888/user/add
+ * Address : http://localhost:8080/user/adduser
+ 
+ <h2>Send Get Request</h2>
+
+* When register user, you send database name.
+
+* For Example : Request Body
+
+      * {
+           "userFirstName" :"firstNameUser",
+           "UserLastName" : "LastNameUser",
+           "birthDate" : "date"
+           "userEmail" : "mailaddress",
+           "userDepartment" : "userdepartment"
+       }
+       
+ * Address : http://localhost:8080/user/adduser
+ 
+  <h2>Send Delete Request</h2>
+
+* When register user, you send database name.
+
+* For Example : Request Body
+
+      * {
+           "userFirstName" :"firstNameUser",
+           "UserLastName" : "LastNameUser",
+           "birthDate" : "date"
+           "userEmail" : "mailaddress",
+           "userDepartment" : "userdepartment"
+       }
+       
+ * Address : http://localhost:8080/user/adduser

@@ -41,15 +41,9 @@
 
 * For Example : Request Body
 
-      * {
-           "userFirstName" :"firstNameUser",
-           "UserLastName" : "LastNameUser",
-           "birthDate" : "date"
-           "userEmail" : "mailaddress",
-           "userDepartment" : "userdepartment"
-       }
+      * http://localhost:8080/user/getuser?userid=1
        
- * Address : http://localhost:8080/user/adduser
+ * Address : http://localhost:8080/user/getuser
  
   <h2>Send Delete Request</h2>
 
@@ -57,12 +51,6 @@
 
 * For Example : Request Body
 
-      * {
-           "userFirstName" :"firstNameUser",
-           "UserLastName" : "LastNameUser",
-           "birthDate" : "date"
-           "userEmail" : "mailaddress",
-           "userDepartment" : "userdepartment"
-       }
+      * http://localhost:8080/user/getuser?userid=1
        
- * Address : http://localhost:8080/user/adduser
+ * Address : http://localhost:8080/user/deleteuser

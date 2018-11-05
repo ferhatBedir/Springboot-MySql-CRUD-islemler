@@ -59,10 +59,16 @@
 
       * http://localhost:8080/user/getuser?id=1
  
-  <h2>Send Delete Request</h2>
+ <h2>Send Delete Request</h2>
 
 * For delete user from database
 
 * For Example : 
 
       * http://localhost:8080/user/getuser?id=1
+  
+<h2>Used Technologies</h2>
+ * Java 8
+ * Spring Boot
+ * Mysql
+ 

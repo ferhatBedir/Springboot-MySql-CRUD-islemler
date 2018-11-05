@@ -69,7 +69,11 @@
   
 <h2>Used Technologies</h2>
  * Java 8
+ 
  * Spring Boot
+ 
  * Mysql
+ 
  * Maven
+ 
  

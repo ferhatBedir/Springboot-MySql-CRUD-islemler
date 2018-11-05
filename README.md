@@ -21,7 +21,7 @@
        
 <h2>Send Post Request</h2>
 
-* When register user, you send database name.
+* User add to Database
 
 * For Example : Request Body
 
@@ -35,22 +35,34 @@
        
  * Address : http://localhost:8080/user/adduser
  
- <h2>Send Get Request</h2>
+ <h2>Send Post Request</h2>
 
-* When register user, you send database name.
+* User update to Database
 
 * For Example : Request Body
 
-      * http://localhost:8080/user/getuser?userid=1
+      * {
+           "userFirstName" :"firstNameUser",
+           "UserLastName" : "LastNameUser",
+           "birthDate" : "date"
+           "userEmail" : "mailaddress",
+           "userDepartment" : "userdepartment"
+       }
        
- * Address : http://localhost:8080/user/getuser
+ * Address : http://localhost:8080/user/updateuser
+ 
+ <h2>Send Get Request</h2>
+
+* For read user from database
+
+* For Example :
+
+      * http://localhost:8080/user/getuser?id=1
  
   <h2>Send Delete Request</h2>
 
-* When register user, you send database name.
+* For delete user from database
 
-* For Example : Request Body
+* For Example : 
 
-      * http://localhost:8080/user/getuser?userid=1
-       
- * Address : http://localhost:8080/user/deleteuser
+      * http://localhost:8080/user/getuser?id=1

@@ -9,4 +9,26 @@
  <h2>How to run the application ?</h2>
  
  * You must have mysql installed on the computer.
- * Application is runing in localhost and port 8888 and default database name is ' default '.
+ * Application is runing in localhost and port 8080 and default database name is ' springdeneme '.
+ * The application.properties file is below. If your settings are different, change from the application.properties file.
+ 
+       spring.datasource.url=jdbc:mysql://localhost:3306/springdeneme?useUnicode=true&characterEncoding=utf-8
+       spring.datasource.username=root
+       # Hibernate
+       spring.jpa.show-sql=false
+       spring.jpa.hibernate.ddl-auto=update
+       server.port=8080
+       
+<h2>Send Request</h2>
+
+* When register user, you send database name.
+
+* For Example : Request Body
+
+      * {
+           "userName" :"firstNameUser",
+           "userLastName" : "LastNameUser",
+           "databaseName" : "dbname"
+       }
+       
+ * Address : http://localhost:8888/user/add
